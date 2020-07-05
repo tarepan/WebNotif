@@ -30,8 +30,9 @@ if ("serviceWorker" in navigator) {
         }
       })
       .then((reg) => {
-        reg.showNotification("Hello notif", {
-          body: "this is my original notification.",
+        reg.showNotification("不磨わっと", {
+          body: "なんなノォ!?",
+          icon: "/WebNotif/wat.jpg",
         });
       })
       .then((v) => console.log(v));

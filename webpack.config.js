@@ -36,7 +36,7 @@ module.exports = {
     }),
     // new HtmlWebpackInjector()
     new CopyPlugin({
-      patterns: [{ from: "src/sw.js" }],
+      patterns: [{ from: "src/sw.js" }, { from: "materials/wat.jpg" }],
     }),
   ],
   devServer: {
