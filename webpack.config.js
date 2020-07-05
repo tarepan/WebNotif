@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // const HtmlWebpackInjector = require("html-webpack-injector");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -34,6 +35,9 @@ module.exports = {
       ],
     }),
     // new HtmlWebpackInjector()
+    new CopyPlugin({
+      patterns: [{ from: "src/sw.js" }],
+    }),
   ],
   devServer: {
     contentBase: path.join(__dirname, "dist"),
