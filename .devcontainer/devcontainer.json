@@ -9,7 +9,7 @@
   //     "--env-file",
   //     "${localEnv:HOME}${localEnv:USERPROFILE}/envDir/env.env"
   //   ],
-  "forwardPorts": [8000],
+  "forwardPorts": [8001],
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
   },
