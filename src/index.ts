@@ -33,6 +33,7 @@ if ("serviceWorker" in navigator) {
         reg.showNotification("不磨わっと", {
           body: "なんなノォ!?",
           icon: "/WebNotif/wat.jpg",
+          image: "/WebNotif/wat.jpg",
         });
       })
       .then((v) => console.log(v));
