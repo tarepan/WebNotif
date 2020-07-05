@@ -1,3 +1,4 @@
+type RegResolve = (reg: ServiceWorkerRegistration) => void;
 // sw load
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
@@ -12,15 +13,27 @@ if ("serviceWorker" in navigator) {
             "ServiceWorker registration successful with scope: ",
             registration.scope
           );
-          return registration.showNotification("Hello notif", {
-            body: "this is my original notification.",
-          });
+          return Promise.resolve(registration);
         },
         (err) => {
           // registration failed :(
           console.log("ServiceWorker registration failed: ", err);
         }
       )
+      .then((reg) => {
+        if (reg) {
+          return new Promise((resolve: RegResolve) =>
+            setTimeout(() => resolve(reg), 5000)
+          );
+        } else {
+          throw new Error("above error");
+        }
+      })
+      .then((reg) => {
+        reg.showNotification("Hello notif", {
+          body: "this is my original notification.",
+        });
+      })
       .then((v) => console.log(v));
   });
 }
