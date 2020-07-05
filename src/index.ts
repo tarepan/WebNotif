@@ -12,12 +12,16 @@ if ("serviceWorker" in navigator) {
             "ServiceWorker registration successful with scope: ",
             registration.scope
           );
+          return registration.showNotification("Hello notif", {
+            body: "this is my original notification.",
+          });
         },
         (err) => {
           // registration failed :(
           console.log("ServiceWorker registration failed: ", err);
         }
-      );
+      )
+      .then((v) => console.log(v));
   });
 }
 
