@@ -16,7 +16,7 @@ self.addEventListener("notificationclick", function (event) {
   console.log("[Service Worker] Notification click Received.");
   event.notification.close();
   event.waitUntil(
-    self.clients.openWindow("https://www.youtube.com/watch?v=YvqEkPRHjM4")
+    clients.openWindow("https://www.youtube.com/watch?v=YvqEkPRHjM4")
   );
 });
 // navigator.serviceWorker.ready.then((registration) => {
