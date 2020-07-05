@@ -1,3 +1,3 @@
 # WebNotif
 Web Notifications API.  
-Check [GitHub Pages](tarepan.github.io/WebNotif)
+Check [GitHub Pages](https://tarepan.github.io/WebNotif/)
